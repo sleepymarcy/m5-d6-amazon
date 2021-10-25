@@ -7,7 +7,7 @@ import { fileURLToPath } from 'url'
 const fname = fileURLToPath(import.meta.url)
 const dname = dirname(fname)
 
-const productsFilePath = path.join(dname, 'products.json')
+const productsFilePath = path.join(dname, '../data/products.json')
 
 const productsRoute = express.Router()
 
