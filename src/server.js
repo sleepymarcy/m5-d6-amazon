@@ -35,9 +35,10 @@ server.use('/reviews', reviewsRoute)
 //  server.use(internalServerErrorHandler)
  console.table(listEndpoints(server))
 
- console.log(listEndpoints(server))
+console.log(listEndpoints(server));
 
 server.listen(port, () => console.log("Port running: ", port));
 
-server.on('error', (error) =>
-    console.log(`Server is not running due to : ${error}`))
+server.on("error", (error) =>
+  console.log(`Server is not running due to : ${error}`)
+);
