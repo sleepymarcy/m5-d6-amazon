@@ -5,7 +5,7 @@ import path, { dirname } from "path";
 import { fileURLToPath } from "url";
 // import productsRouter from './products/index.js'
 // import reviewsRoute from "./reviews/index.js"
-import { badRequestHandler, notFoundHandler,forbiddenErrorHandler, internalServerErrorHandler } from './reviews/errorHandlers.js'
+// import { badRequestHandler, notFoundHandler,forbiddenErrorHandler, internalServerErrorHandler } from './reviews/errorHandlers.js'
 
 const fname = fileURLToPath(import.meta.url)
 const dname = dirname(fname)
@@ -20,11 +20,11 @@ server.use(express.static(publicDirectory));
 // server.use('/products', productsRouter)
 // server.use("/reviews",reviewsRoute)
 
- server.use(badRequestHandler)
- server.use(notFoundHandler)
- server.use(forbiddenErrorHandler)
- server.use(internalServerErrorHandler)
- console.table(listEndpoints(server))
+//  server.use(badRequestHandler)
+//  server.use(notFoundHandler)
+//  server.use(forbiddenErrorHandler)
+//  server.use(internalServerErrorHandler)
+//  console.table(listEndpoints(server))
 
  console.log(listEndpoints(server))
 
