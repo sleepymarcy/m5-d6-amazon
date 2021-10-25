@@ -3,8 +3,14 @@ import cors from "cors";
 import listEndpoints from "express-list-endpoints";
 import path, { dirname } from "path";
 import { fileURLToPath } from "url";
+
 import reviewsRoute from "./reviews/index.js";
 import { badRequest, unAuthorized, notFound, genericError } from './reviews/errorHandlers.js'
+
+// import productsRouter from './products/index.js'
+// import reviewsRoute from "./reviews/index.js"
+// import { badRequestHandler, notFoundHandler,forbiddenErrorHandler, internalServerErrorHandler } from './reviews/errorHandlers.js'
+
 
 const fname = fileURLToPath(import.meta.url)
 const dname = dirname(fname)
@@ -23,6 +29,10 @@ server.use('/reviews', reviewsRoute)
  server.use(unAuthorized)
  server.use(notFound)
  server.use(genericError)
+//  server.use(badRequestHandler)
+//  server.use(notFoundHandler)
+//  server.use(forbiddenErrorHandler)
+//  server.use(internalServerErrorHandler)
  console.table(listEndpoints(server))
 
  console.log(listEndpoints(server))
