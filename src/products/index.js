@@ -45,7 +45,6 @@ productsRoute.post('/', productsValidation, async (req, res, next) => {
                 category,
                 imageUrl,
                 createdAt: new Date(),
-                updatedAt: new Date(),
             }
 
             const fileAsBuffer = fs.readFileSync(productsFilePath)
