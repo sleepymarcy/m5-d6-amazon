@@ -6,6 +6,7 @@ import { fileURLToPath } from 'url'
 import { productsValidation } from './validation.js'
 import { validationResult } from "express-validator";
 import createHttpError from "http-errors";
+import { getProducts, writeProducts } from '../reviews/db.js'
 
 const fname = fileURLToPath(import.meta.url)
 const dname = dirname(fname)
@@ -44,6 +45,7 @@ productsRoute.post('/', productsValidation, async (req, res, next) => {
                 price,
                 category,
                 imageUrl,
+                reviews: [],
                 createdAt: new Date(),
             }
 
@@ -60,6 +62,31 @@ productsRoute.post('/', productsValidation, async (req, res, next) => {
         res.status(500).send({ message: error.message })
     }
 })
+
+productsRoute.post("/:id/reviews", async (req, res, next) => {
+  try {
+    const { comment, rate } = req.body;
+
+    const review = { id: uniqid(), comment, rate, createdAt: new Date() };
+
+    const products = await getProducts();
+
+    const index = products.findIndex(p => p.id === req.params.id);
+
+    products[index].reviews = products[index].reviews || [];
+
+    const editedProducts = products[index];
+    editedProducts.reviews.push(review);
+
+    products[index] = editedProducts;
+
+    await writeProducts(products);
+    res.send(editedProducts);
+  } catch (error) {
+    next(error);
+  }
+ }
+)
 
 
 productsRoute.get('/:id', async (req, res, next) => {
@@ -78,6 +105,29 @@ productsRoute.get('/:id', async (req, res, next) => {
                 .send({ message: `Product with ${req.params.id} is not found :(` })
         }
         res.send(product)
+    } catch (error) {
+        res.status(500).send({ message: error.message })
+    }
+})
+
+const fileAsBuffer = fs.readFileSync(productsFilePath)
+const fileAsString = fileAsBuffer.toString()
+const fileAsJSONArray = JSON.parse(fileAsString)
+console.log(`here are the reviews`,fileAsJSONArray.reviews)
+
+productsRoute.get('/:id/reviews', async (req, res, next) => {
+    try {
+
+        const product = fileAsJSONArray.find(
+            (product) => product.id === req.params.id
+        )
+
+        if (!product) {
+            res
+                .status(404)
+                .send({ message: `Product with ${req.params.id} is not found :(` })
+        }
+        res.send(fileAsJSONArray.reviews)
     } catch (error) {
         res.status(500).send({ message: error.message })
     }

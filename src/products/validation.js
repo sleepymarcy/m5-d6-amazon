@@ -5,6 +5,6 @@ export const productsValidation = [
     body("description").exists().withMessage("Description is required!"),
     body("brand").exists().withMessage("Brand is required!"),
     body("price").exists().withMessage("Price is required!"),
-    // body("category").exists().withMessage("Category is required!"),
+    body("category").exists().withMessage("Category is required!"),
     body("imageUrl").exists().withMessage("ImageUrl is required!"),
 ];
