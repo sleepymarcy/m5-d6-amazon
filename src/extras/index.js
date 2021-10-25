@@ -27,7 +27,7 @@ productsRouter.post(
       console.log("REQ FILE ", req.file);
       //console.log(req);
 
-      const pictureUrl = `http://localhost:3001/img/blogs/${req.file.originalname}`;
+      const pictureUrl = `http://localhost:3001/img/products/${req.file.originalname}`;
       const newProduct = {
         ...req.body,
         name: "",
