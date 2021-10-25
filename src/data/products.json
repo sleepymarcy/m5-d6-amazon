@@ -1,1 +1,54 @@
-[]
+[
+  {
+    "id": "pluwd1bi2kv6qgimg",
+    "name": "Rustic Steel Bike",
+    "description": "Very nice",
+    "brand": "1080p",
+    "price": "271",
+    "category": "headphones",
+    "imageUrl": "https://www.mytrendyphone.eu/images/Forever-Music-Soul-BHS-300-Bluetooth-Headphones-with-Microphone-Black-5900495738110-17072019-01-p.jpg",
+    "reviews": [
+      {
+        "id": "pluwd1cntkv6rg28o",
+        "comment": "Intuitive full-range solution",
+        "rate": "784",
+        "createdAt": "2021-10-25T14:33:50.423Z"
+      },
+      {
+        "id": "pluwd1cntkv6rg7zb",
+        "comment": "De-engineered asymmetric internet solution",
+        "rate": "334",
+        "createdAt": "2021-10-25T14:33:57.863Z"
+      },
+      {
+        "id": "pluwd1cntkv6rgdpn",
+        "comment": "Integrated web-enabled process improvement",
+        "rate": "728",
+        "createdAt": "2021-10-25T14:34:05.291Z"
+      }
+    ],
+    "createdAt": "2021-10-25T14:06:12.039Z"
+  },
+  {
+    "id": "pluwd1bi2kv6qgnuc",
+    "name": "Practical Fresh Salad",
+    "description": "Very nice",
+    "brand": "wireless",
+    "price": "93",
+    "category": "headphones",
+    "imageUrl": "https://www.mytrendyphone.eu/images/Forever-Music-Soul-BHS-300-Bluetooth-Headphones-with-Microphone-Black-5900495738110-17072019-01-p.jpg",
+    "reviews": [],
+    "createdAt": "2021-10-25T14:06:18.804Z"
+  },
+  {
+    "id": "pluwd1bi2kv6qgoro",
+    "name": "Incredible Rubber Keyboard",
+    "description": "Very nice",
+    "brand": "redundant",
+    "price": "233",
+    "category": "headphones",
+    "imageUrl": "https://www.mytrendyphone.eu/images/Forever-Music-Soul-BHS-300-Bluetooth-Headphones-with-Microphone-Black-5900495738110-17072019-01-p.jpg",
+    "reviews": [],
+    "createdAt": "2021-10-25T14:06:20.004Z"
+  }
+]

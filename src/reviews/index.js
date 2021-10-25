@@ -5,6 +5,7 @@ import { validationResult } from "express-validator";
 import createHttpError from "http-errors";
 import uniqid from "uniqid";
 
+
 const reviewsRoute = express.Router();
 
 // Get all the reviews
@@ -36,8 +37,9 @@ reviewsRoute.get("/:id", async (req, res, next) => {
     next(error);
   }
 });
+
 // Post a new review
-reviewsRoute.post("/", reviewsValidation, async (req, res, next) => {
+reviewsRoute.post("/:id/", reviewsValidation, async (req, res, next) => {
   try {
     const errorList = validationResult(req);
 
@@ -47,7 +49,7 @@ reviewsRoute.post("/", reviewsValidation, async (req, res, next) => {
       const newReview = {
         id: uniqid(),
         ...req.body,
-        productId: uniqid(),
+        productId: req.params.id,
         createdAt: new Date(),
       };
 
