@@ -10,7 +10,7 @@ import createHttpError from "http-errors";
 const fname = fileURLToPath(import.meta.url)
 const dname = dirname(fname)
 
-const productsFilePath = path.join(dname, '../data/products.json')
+export const productsFilePath = path.join(dname, '../data/products.json')
 
 const productsRoute = express.Router()
 

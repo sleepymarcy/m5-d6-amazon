@@ -4,8 +4,10 @@ import { getReviews, writeReviews } from "./db.js";
 import { validationResult } from "express-validator";
 import createHttpError from "http-errors";
 import uniqid from "uniqid";
+import productsFilePath from "../products/index.js"
 
 const reviewsRoute = express.Router();
+const productArray = productsFilePath
 
 // Get all the reviews
 reviewsRoute.get("/", async (req, res, next) => {
@@ -47,7 +49,7 @@ reviewsRoute.post("/", reviewsValidation, async (req, res, next) => {
       const newReview = {
         id: uniqid(),
         ...req.body,
-        productId: uniqid(),
+        productId: productArray.id,
         createdAt: new Date(),
       };
 

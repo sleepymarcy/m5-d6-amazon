@@ -1,1 +1,22 @@
-[]
+[
+  {
+    "id": "pluwd19e7kv6lcpxp",
+    "name": "Generic Cotton Shirt",
+    "description": "Very nice",
+    "brand": "primary",
+    "price": "870",
+    "category": "headphones",
+    "imageUrl": "https://www.mytrendyphone.eu/images/Forever-Music-Soul-BHS-300-Bluetooth-Headphones-with-Microphone-Black-5900495738110-17072019-01-p.jpg",
+    "createdAt": "2021-10-25T11:43:16.812Z"
+  },
+  {
+    "id": "pluwd19e7kv6lcssf",
+    "name": "Tasty Rubber Shirt",
+    "description": "Very nice",
+    "brand": "mobile",
+    "price": "173",
+    "category": "headphones",
+    "imageUrl": "https://www.mytrendyphone.eu/images/Forever-Music-Soul-BHS-300-Bluetooth-Headphones-with-Microphone-Black-5900495738110-17072019-01-p.jpg",
+    "createdAt": "2021-10-25T11:43:20.511Z"
+  }
+]
